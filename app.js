@@ -246,9 +246,9 @@ function closeModal(){
 
 function showData(user){
     // console.log(user)
+    openModal()
     var modalBody = document.createElement('div');
     modalBody.setAttribute("class" , "modal-body");
-    openModal()
     var userData = {}
 
     for (var key in data){
@@ -288,9 +288,10 @@ function showData(user){
 }
 
 for (var i = 0 ; i<data.length ; i++){
+    // console.log(data[i])  // give all data
     var userDiv = document.createElement('div');
-    userDiv.innerText = `ID: ${data[i]?.id} Name: ${data[i]?.name}`
     userDiv.setAttribute("class", "user-div");
+    userDiv.innerText = `ID: ${data[i]?.id} Name: ${data[i]?.name}`
     userDiv.setAttribute("onClick",`showData(${data[i]?.id})`)
     mainElm.appendChild(userDiv);
 }
