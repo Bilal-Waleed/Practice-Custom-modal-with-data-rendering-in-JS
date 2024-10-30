@@ -259,28 +259,28 @@ function showData(user){
     for (var key in userData){
         // console.log(key, userData[key])
         if(typeof(userData[key]) == 'object'){
-            modalBody.innerHTML += `${key} : <br>`
+            modalBody.innerHTML += `<strong>${key}</strong> : <br>`
             for(var key2 in userData[key]){
                 // console.log(key2,userData[key][key2])
                 if(typeof(userData[key][key2]) == 'object'){
-                    modalBody.innerHTML += `${key2} : <br>`
+                    modalBody.innerHTML += `<strong>${key2}</strong> : <br>`
                     for(var key3 in userData[key][key2]){
                         // console.log(key3,userData[key][key2][key3])
                         if(typeof(userData[key][key2][key3]) == 'object'){
-                            modalBody.innerHTML += `${key3}: <br>`
+                            modalBody.innerHTML += `<strong>${key3}</strong>: <br>`
                         }
                         else{
-                            modalBody.innerHTML += `${key3}: ${userData[key][key2][key3]} <br>`
+                            modalBody.innerHTML += `<strong>${key3}</strong>: ${userData[key][key2][key3]} <br>`
                         }
                     }
                 }
                 else{
-                    modalBody.innerHTML += `${key2} : ${userData[key][key2]} <br>`
+                    modalBody.innerHTML += `<strong>${key2}</strong> : ${userData[key][key2]} <br>`
                 }
             }
         }
         else{
-            modalBody.innerHTML += `${key} : ${userData[key]} <br>`
+            modalBody.innerHTML += `<strong>${key}</strong> : ${userData[key]} <br>`
         }
     }
     // console.log(userData)

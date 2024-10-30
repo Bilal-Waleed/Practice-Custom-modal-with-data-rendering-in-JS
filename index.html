@@ -1,54 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>data rendering</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data rendering</title>
     <style>
-        body{
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
-        .modal-parent{
-            position: absolute;
-            height: 100vh;
-            width: 100vw;
-            display: none;
-            background-color: rgba(107, 106, 106, 0.371);
-            justify-content: center;
-            align-items: center;
-            opacity: 1;
-        }
-        .modal{
-            height: 300px;
-            width: 500px;
-            background-color: white;
-        }
-        .user-div {
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid black;
-      }
-      .modal-body{
-        height: 90%;
-        overflow: scroll;
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
       }
 
+      .modal-parent {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.6); 
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal {
+        height: 350px;
+        width: 500px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        animation: fadeIn 0.3s ease; 
+      }
+      .modal-head {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .modal-head button {
+        background-color: #ff5f57; 
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+
+      .modal-head button:hover {
+        background-color: #e04c4c;
+      }
+
+      .modal-body {
+        flex-grow: 1;
+        margin-top: 10px;
+        padding: 10px;
+        overflow-y: auto;
+        color: #474747;
+      }
+
+      .user-div {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        border: 1px solid #565656;
+        background-color: #565656;
+        color: #ffffff;
+        transition: background-color 0.3s ease, transform 0.2s;
+        cursor: pointer;
+      }
+
+      .user-div:hover {
+        background-color: #424242; 
+        transform: scale(1.03);
+      }
+
+      .main {
+        padding: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="modal-parent">
-        <div class="modal">
-            <div class="modal-head">
-                <button onclick="closeModal()">close</button>
-            </div>
+      <div class="modal">
+        <div class="modal-head">
+          <button onclick="closeModal()">close</button>
         </div>
+      </div>
     </div>
     <div class="main">
-        <!-- <button onclick="openModal()">Open Modal</button> -->
+      <!-- <button onclick="openModal()">Open Modal</button> -->
     </div>
 
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
